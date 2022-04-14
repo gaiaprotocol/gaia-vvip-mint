@@ -52,7 +52,7 @@ export default class Home implements View {
             SkyUtil.repeat(balance, (i: number) => {
                 const promise = async (index: number) => {
                     const item = new NftItem().appendTo(this.nftList);
-                    // const tokenId = (await GaiaNFTContract.tokenOfOwnerByIndex(address!, index)).toNumber();;
+                    // const tokenId = (await GaiaNFTContract.tokenOfOwnerByIndex(address!, index)).toNumber();
                     if (tokenId === 0) {
                         item.delete();
                     } else {
