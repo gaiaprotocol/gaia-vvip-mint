@@ -1,0 +1,68 @@
+.nft-item {
+    display       : flex;
+    position      : relative;
+    flex-direction: column;
+    overflow      : hidden;
+    margin-bottom : 16px;
+
+    @media @phone {
+        align-items: center;
+    }
+
+    >img {
+        border-radius: 2px;
+        max-width    : 256px;
+        width        : 100%;
+        height       : auto;
+    }
+
+    >.name {
+        font-family: "Trajan Pro Regular";
+        position   : absolute;
+        left       : 8px;
+        top        : 8px;
+        color      : white;
+        text-shadow: 1px 1px 1px #656565;
+
+        @media @phone {
+            left: 24px;
+        }
+    }
+
+    >.krno {
+        font-family: "Trajan Pro Regular";
+        position   : absolute;
+        right      : 32px;
+        top        : 8px;
+        color      : white;
+        text-shadow: 1px 1px 1px #656565;
+
+        @media @phone {
+            left: 24px;
+        }
+    }
+
+    >button {
+        font-family     : "Trajan Pro Regular";
+        color           : white;
+        margin-top      : 16px;
+        background-color: rgba(177, 156, 118, 1);
+        border-radius   : 2px;
+        padding         : 16px 0px;
+        margin-right    : 16px;
+        max-width       : 256px;
+        width           : 100%;
+
+        @media @phone {
+            margin-right: 0px;
+        }
+
+        &:hover {
+            background-color: rgba(177, 156, 118, 0.9);
+        }
+
+        &:active {
+            background-color: rgba(177, 156, 118, 0.8);
+        }
+    }
+}

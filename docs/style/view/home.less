@@ -1,0 +1,57 @@
+.home-view {
+    display         : flex;
+    flex-direction  : column;
+    margin          : auto;
+    justify-content : center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius   : 2px;
+    padding         : 20px;
+    margin-top      : 32px;
+
+    >h1 {
+        font-family: 'Trajan Pro Bold';
+        text-align : center;
+        font-size  : 21px;
+        font-weight: 700;
+    }
+
+    >h2 {
+        font-family: 'Trajan Pro Regular';
+        text-align : center;
+        font-size  : 14px;
+        margin-top : 4px;
+        color      : rgba(177, 156, 118, 1);
+    }
+
+    >h3 {
+        font-family: 'Trajan Pro Regular';
+        text-align : left;
+        align-items: left;
+        margin-top : 16px;
+    }
+
+    >h4 {
+        font-family: 'Trajan Pro Regular';
+        text-align : left;
+        align-items: left;
+        font-size  : 12px;
+        margin-top : 4px;
+    }
+
+    >.nft-container {
+        display              : grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top           : 16px;
+
+        >.empty {
+            font-family: 'Trajan Pro Regular';
+            text-align : left;
+            align-items: left;
+            color      : rgba(153, 0, 19, 1);
+        }
+
+        @media @phone {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
