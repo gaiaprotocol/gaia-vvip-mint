@@ -38,6 +38,7 @@ export interface IGaiaOperationInterface extends utils.Interface {
     "mintGaiaNFT(uint256)": FunctionFragment;
     "klaySwapFactory()": FunctionFragment;
     "gonsForId(uint256)": FunctionFragment;
+    "initialKRNOEach()": FunctionFragment;
     "buyBackFund()": FunctionFragment;
     "whitelistTickets(address)": FunctionFragment;
     "KRNO()": FunctionFragment;
@@ -104,6 +105,10 @@ export interface IGaiaOperationInterface extends utils.Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "initialKRNOEach",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "buyBackFund",
     values?: undefined
   ): string;
@@ -161,6 +166,10 @@ export interface IGaiaOperationInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "gonsForId", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "initialKRNOEach",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "buyBackFund",
     data: BytesLike
@@ -323,6 +332,8 @@ export interface IGaiaOperation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
+    initialKRNOEach(overrides?: CallOverrides): Promise<[BigNumber]>;
+
     buyBackFund(overrides?: CallOverrides): Promise<[string]>;
 
     whitelistTickets(
@@ -394,6 +405,8 @@ export interface IGaiaOperation extends BaseContract {
 
   gonsForId(id: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
+  initialKRNOEach(overrides?: CallOverrides): Promise<BigNumber>;
+
   buyBackFund(overrides?: CallOverrides): Promise<string>;
 
   whitelistTickets(user: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -458,6 +471,8 @@ export interface IGaiaOperation extends BaseContract {
     klaySwapFactory(overrides?: CallOverrides): Promise<string>;
 
     gonsForId(id: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialKRNOEach(overrides?: CallOverrides): Promise<BigNumber>;
 
     buyBackFund(overrides?: CallOverrides): Promise<string>;
 
@@ -567,6 +582,8 @@ export interface IGaiaOperation extends BaseContract {
 
     gonsForId(id: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
+    initialKRNOEach(overrides?: CallOverrides): Promise<BigNumber>;
+
     buyBackFund(overrides?: CallOverrides): Promise<BigNumber>;
 
     whitelistTickets(
@@ -641,6 +658,8 @@ export interface IGaiaOperation extends BaseContract {
       id: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    initialKRNOEach(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     buyBackFund(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

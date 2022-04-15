@@ -1,6 +1,8 @@
 import { DomNode, el } from "skydapp-browser";
 import { Debouncer, SkyUtil, View, ViewParams } from "skydapp-common";
 import NftItem from "../component/NftItem";
+import GaiaNFTContract from "../contracts/GaiaNFTContract";
+import VVIPMinterContract from "../contracts/VVIPMinterContract";
 // import GaiaNFTContract from "../contracts/GaiaNFTContract";
 import Wallet from "../klaytn/Wallet";
 import Layout from "./Layout";
@@ -40,9 +42,7 @@ export default class Home implements View {
     private async loadNFTs(): Promise<void> {
         this.nftList.empty();
 
-        const address = await Wallet.loadAddress();
-        // const balance = (await GaiaNFTContract.balanceOf(address!)).toNumber();
-        const balance = 0;
+        const balance = (await GaiaNFTContract.balanceOf(VVIPMinterContract.address)).toNumber();
         if (balance === 0) {
             this.nftList.append(el("p.empty", "not on sale"));
         } else {
@@ -52,7 +52,7 @@ export default class Home implements View {
             SkyUtil.repeat(balance, (i: number) => {
                 const promise = async (index: number) => {
                     const item = new NftItem().appendTo(this.nftList);
-                    // const tokenId = (await GaiaNFTContract.tokenOfOwnerByIndex(address!, index)).toNumber();
+                    const tokenId = (await GaiaNFTContract.tokenOfOwnerByIndex(VVIPMinterContract.address, index)).toNumber();
                     if (tokenId === 0) {
                         item.delete();
                     } else {

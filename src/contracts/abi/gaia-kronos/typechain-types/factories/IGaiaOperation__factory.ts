@@ -297,6 +297,20 @@ const _abi = [
   {
     constant: true,
     inputs: [],
+    name: "initialKRNOEach",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
     name: "buyBackFund",
     outputs: [
       {

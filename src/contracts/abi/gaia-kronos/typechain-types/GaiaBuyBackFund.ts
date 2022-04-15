@@ -22,6 +22,7 @@ export interface GaiaBuyBackFundInterface extends utils.Interface {
   functions: {
     "withdrawToken(address,address,uint256)": FunctionFragment;
     "withdrawGaiaNFT(uint256[],address)": FunctionFragment;
+    "buyBackInitialized()": FunctionFragment;
     "closeBuyBack()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
     "withdrawKlay(address,uint256)": FunctionFragment;
@@ -43,6 +44,10 @@ export interface GaiaBuyBackFundInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "withdrawGaiaNFT",
     values: [BigNumberish[], string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "buyBackInitialized",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "closeBuyBack",
@@ -87,6 +92,10 @@ export interface GaiaBuyBackFundInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "withdrawGaiaNFT",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "buyBackInitialized",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -216,6 +225,8 @@ export interface GaiaBuyBackFund extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    buyBackInitialized(overrides?: CallOverrides): Promise<[boolean]>;
+
     closeBuyBack(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -271,6 +282,8 @@ export interface GaiaBuyBackFund extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  buyBackInitialized(overrides?: CallOverrides): Promise<boolean>;
+
   closeBuyBack(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -325,6 +338,8 @@ export interface GaiaBuyBackFund extends BaseContract {
       recipient: string,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    buyBackInitialized(overrides?: CallOverrides): Promise<boolean>;
 
     closeBuyBack(overrides?: CallOverrides): Promise<void>;
 
@@ -416,6 +431,8 @@ export interface GaiaBuyBackFund extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    buyBackInitialized(overrides?: CallOverrides): Promise<BigNumber>;
+
     closeBuyBack(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -470,6 +487,10 @@ export interface GaiaBuyBackFund extends BaseContract {
       ids: BigNumberish[],
       recipient: string,
       overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    buyBackInitialized(
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     closeBuyBack(

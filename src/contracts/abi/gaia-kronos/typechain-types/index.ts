@@ -8,7 +8,6 @@ export type { IGaiaBuyBackFund } from "./IGaiaBuyBackFund";
 export type { IGaiaNFT } from "./IGaiaNFT";
 export type { IGaiaOperation } from "./IGaiaOperation";
 export type { IKlaySwapFactory } from "./IKlaySwapFactory";
-export type { IKLP } from "./IKLP";
 export type { IKronosStaking } from "./IKronosStaking";
 export type { IKSLP } from "./IKSLP";
 export type { IsKRNO } from "./IsKRNO";
@@ -84,6 +83,7 @@ export type { MockKRNO } from "./MockKRNO";
 export type { MockKSLP } from "./MockKSLP";
 export type { MocksKRNO } from "./MocksKRNO";
 export type { MockStaking } from "./MockStaking";
+export type { VVIPMinter } from "./VVIPMinter";
 
 export { GaiaBuyBackFund__factory } from "./factories/GaiaBuyBackFund__factory";
 export { GaiaNFT__factory } from "./factories/GaiaNFT__factory";
@@ -92,7 +92,6 @@ export { IGaiaBuyBackFund__factory } from "./factories/IGaiaBuyBackFund__factory
 export { IGaiaNFT__factory } from "./factories/IGaiaNFT__factory";
 export { IGaiaOperation__factory } from "./factories/IGaiaOperation__factory";
 export { IKlaySwapFactory__factory } from "./factories/IKlaySwapFactory__factory";
-export { IKLP__factory } from "./factories/IKLP__factory";
 export { IKronosStaking__factory } from "./factories/IKronosStaking__factory";
 export { IKSLP__factory } from "./factories/IKSLP__factory";
 export { IsKRNO__factory } from "./factories/IsKRNO__factory";
@@ -168,3 +167,4 @@ export { MockKRNO__factory } from "./factories/MockKRNO__factory";
 export { MockKSLP__factory } from "./factories/MockKSLP__factory";
 export { MocksKRNO__factory } from "./factories/MocksKRNO__factory";
 export { MockStaking__factory } from "./factories/MockStaking__factory";
+export { VVIPMinter__factory } from "./factories/VVIPMinter__factory";

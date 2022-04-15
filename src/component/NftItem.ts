@@ -1,6 +1,8 @@
 import { BigNumber, utils } from "ethers";
 import { DomNode, el } from "skydapp-browser";
 import CommonUtil from "../CommonUtil";
+import GaiaOperationContract from "../contracts/GaiaOperationContract";
+import VVIPMinterContract from "../contracts/VVIPMinterContract";
 // import GaiaOperationContract from "../contracts/GaiaOperationContract";
 import ViewUtil from "../view/ViewUtil";
 import Confirm from "./shared/dialogue/Confirm";
@@ -22,6 +24,7 @@ export default class NftItem extends DomNode {
             this.krnoDisplay = el(".krno"),
             el("button", "BUY", {
                 click: () => new Confirm("구매 확인", "1,000클레이로 구매합니다.", "구매", async () => {
+                    await VVIPMinterContract.mint(this.id);
                     ViewUtil.waitTransactionAndRefresh();
                 }),
             }),
@@ -29,7 +32,7 @@ export default class NftItem extends DomNode {
     }
 
     private async loadKRNO(): Promise<void> {
-        // this.krno = await GaiaOperationContract.claimableKRNO([this.id]);
+        this.krno = await GaiaOperationContract.claimableKRNO([this.id]);
         this.krnoDisplay.empty().appendText(`${CommonUtil.numberWithCommas(utils.formatUnits(this.krno, 9))} KRNO`);
     }
 
