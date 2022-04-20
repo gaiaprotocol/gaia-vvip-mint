@@ -587,11 +587,6 @@ body {
   color: white;
   text-shadow: 1px 1px 1px #656565;
 }
-@media only screen and (max-width: 719px) {
-  .nft-item > .name {
-    left: 24px;
-  }
-}
 .nft-item > .krno {
   font-family: "Trajan Pro Regular";
   position: absolute;
@@ -602,7 +597,7 @@ body {
 }
 @media only screen and (max-width: 719px) {
   .nft-item > .krno {
-    left: 24px;
+    right: 8px;
   }
 }
 .nft-item > button {
@@ -820,11 +815,23 @@ body {
   margin-top: 4px;
   color: #b19c76;
 }
-.home-view > h3 {
+.home-view > .sale-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+.home-view > .sale-container > h3 {
   font-family: 'Trajan Pro Regular';
   text-align: left;
   align-items: left;
-  margin-top: 16px;
+}
+.home-view > .sale-container > p {
+  font-family: 'Trajan Pro Regular';
+  text-align: left;
+  align-items: left;
+  font-size: 12px;
+  margin-left: 4px;
+  color: #b19c76;
 }
 .home-view > h4 {
   font-family: 'Trajan Pro Regular';
