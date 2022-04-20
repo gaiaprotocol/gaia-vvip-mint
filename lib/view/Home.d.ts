@@ -1,6 +1,7 @@
 import { View, ViewParams } from "skydapp-common";
 export default class Home implements View {
     private container;
+    private status;
     private nftList;
     private tokenIds;
     private interval;
