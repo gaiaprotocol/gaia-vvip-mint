@@ -142,7 +142,7 @@ export interface KIP7 extends BaseContract {
 
   functions: {
     supportsInterface(
-      interfaceId: BytesLike,
+      arg0: BytesLike,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
@@ -170,7 +170,7 @@ export interface KIP7 extends BaseContract {
     "safeTransfer(address,uint256,bytes)"(
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg2: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -185,7 +185,7 @@ export interface KIP7 extends BaseContract {
       sender: string,
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg3: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -205,7 +205,7 @@ export interface KIP7 extends BaseContract {
   };
 
   supportsInterface(
-    interfaceId: BytesLike,
+    arg0: BytesLike,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -233,7 +233,7 @@ export interface KIP7 extends BaseContract {
   "safeTransfer(address,uint256,bytes)"(
     recipient: string,
     amount: BigNumberish,
-    data: BytesLike,
+    arg2: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -248,7 +248,7 @@ export interface KIP7 extends BaseContract {
     sender: string,
     recipient: string,
     amount: BigNumberish,
-    data: BytesLike,
+    arg3: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -268,7 +268,7 @@ export interface KIP7 extends BaseContract {
 
   callStatic: {
     supportsInterface(
-      interfaceId: BytesLike,
+      arg0: BytesLike,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -296,7 +296,7 @@ export interface KIP7 extends BaseContract {
     "safeTransfer(address,uint256,bytes)"(
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg2: BytesLike,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -311,7 +311,7 @@ export interface KIP7 extends BaseContract {
       sender: string,
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg3: BytesLike,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -356,7 +356,7 @@ export interface KIP7 extends BaseContract {
 
   estimateGas: {
     supportsInterface(
-      interfaceId: BytesLike,
+      arg0: BytesLike,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -384,7 +384,7 @@ export interface KIP7 extends BaseContract {
     "safeTransfer(address,uint256,bytes)"(
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg2: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -399,7 +399,7 @@ export interface KIP7 extends BaseContract {
       sender: string,
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg3: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -420,7 +420,7 @@ export interface KIP7 extends BaseContract {
 
   populateTransaction: {
     supportsInterface(
-      interfaceId: BytesLike,
+      arg0: BytesLike,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -448,7 +448,7 @@ export interface KIP7 extends BaseContract {
     "safeTransfer(address,uint256,bytes)"(
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg2: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -463,7 +463,7 @@ export interface KIP7 extends BaseContract {
       sender: string,
       recipient: string,
       amount: BigNumberish,
-      data: BytesLike,
+      arg3: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

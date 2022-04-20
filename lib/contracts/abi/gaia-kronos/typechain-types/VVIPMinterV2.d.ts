@@ -1,0 +1,258 @@
+import { BaseContract, BigNumber, BigNumberish, BytesLike, CallOverrides, ContractTransaction, Overrides, PayableOverrides, PopulatedTransaction, Signer, utils } from "ethers";
+import { FunctionFragment, Result, EventFragment } from "@ethersproject/abi";
+import { Listener, Provider } from "@ethersproject/providers";
+import { TypedEventFilter, TypedEvent, TypedListener, OnEvent } from "./common";
+export interface VVIPMinterV2Interface extends utils.Interface {
+    contractName: "VVIPMinterV2";
+    functions: {
+        "presaleBuyers(address)": FunctionFragment;
+        "setV1Buyers(address[])": FunctionFragment;
+        "exit(uint256[])": FunctionFragment;
+        "devFund()": FunctionFragment;
+        "gkronos()": FunctionFragment;
+        "v1Buyers(address)": FunctionFragment;
+        "emergencyWithdraw(address)": FunctionFragment;
+        "renounceOwnership()": FunctionFragment;
+        "enter(uint256[])": FunctionFragment;
+        "owner()": FunctionFragment;
+        "isOwner()": FunctionFragment;
+        "price()": FunctionFragment;
+        "mint(uint256)": FunctionFragment;
+        "gstabledao()": FunctionFragment;
+        "step()": FunctionFragment;
+        "gsupernova()": FunctionFragment;
+        "transferOwnership(address)": FunctionFragment;
+        "setStep(uint256)": FunctionFragment;
+    };
+    encodeFunctionData(functionFragment: "presaleBuyers", values: [string]): string;
+    encodeFunctionData(functionFragment: "setV1Buyers", values: [string[]]): string;
+    encodeFunctionData(functionFragment: "exit", values: [BigNumberish[]]): string;
+    encodeFunctionData(functionFragment: "devFund", values?: undefined): string;
+    encodeFunctionData(functionFragment: "gkronos", values?: undefined): string;
+    encodeFunctionData(functionFragment: "v1Buyers", values: [string]): string;
+    encodeFunctionData(functionFragment: "emergencyWithdraw", values: [string]): string;
+    encodeFunctionData(functionFragment: "renounceOwnership", values?: undefined): string;
+    encodeFunctionData(functionFragment: "enter", values: [BigNumberish[]]): string;
+    encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+    encodeFunctionData(functionFragment: "isOwner", values?: undefined): string;
+    encodeFunctionData(functionFragment: "price", values?: undefined): string;
+    encodeFunctionData(functionFragment: "mint", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "gstabledao", values?: undefined): string;
+    encodeFunctionData(functionFragment: "step", values?: undefined): string;
+    encodeFunctionData(functionFragment: "gsupernova", values?: undefined): string;
+    encodeFunctionData(functionFragment: "transferOwnership", values: [string]): string;
+    encodeFunctionData(functionFragment: "setStep", values: [BigNumberish]): string;
+    decodeFunctionResult(functionFragment: "presaleBuyers", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setV1Buyers", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "exit", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "devFund", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "gkronos", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "v1Buyers", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "emergencyWithdraw", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "renounceOwnership", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "enter", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "isOwner", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "price", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "gstabledao", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "step", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "gsupernova", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "transferOwnership", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setStep", data: BytesLike): Result;
+    events: {
+        "OwnershipTransferred(address,address)": EventFragment;
+    };
+    getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+}
+export declare type OwnershipTransferredEvent = TypedEvent<[
+    string,
+    string
+], {
+    previousOwner: string;
+    newOwner: string;
+}>;
+export declare type OwnershipTransferredEventFilter = TypedEventFilter<OwnershipTransferredEvent>;
+export interface VVIPMinterV2 extends BaseContract {
+    contractName: "VVIPMinterV2";
+    connect(signerOrProvider: Signer | Provider | string): this;
+    attach(addressOrName: string): this;
+    deployed(): Promise<this>;
+    interface: VVIPMinterV2Interface;
+    queryFilter<TEvent extends TypedEvent>(event: TypedEventFilter<TEvent>, fromBlockOrBlockhash?: string | number | undefined, toBlock?: string | number | undefined): Promise<Array<TEvent>>;
+    listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>;
+    listeners(eventName?: string): Array<Listener>;
+    removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this;
+    removeAllListeners(eventName?: string): this;
+    off: OnEvent<this>;
+    on: OnEvent<this>;
+    once: OnEvent<this>;
+    removeListener: OnEvent<this>;
+    functions: {
+        presaleBuyers(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+        setV1Buyers(addrs: string[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        exit(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        devFund(overrides?: CallOverrides): Promise<[string]>;
+        gkronos(overrides?: CallOverrides): Promise<[string]>;
+        v1Buyers(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+        emergencyWithdraw(token: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        enter(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        owner(overrides?: CallOverrides): Promise<[string]>;
+        isOwner(overrides?: CallOverrides): Promise<[boolean]>;
+        price(overrides?: CallOverrides): Promise<[BigNumber]>;
+        mint(id: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        gstabledao(overrides?: CallOverrides): Promise<[string]>;
+        step(overrides?: CallOverrides): Promise<[BigNumber]>;
+        gsupernova(overrides?: CallOverrides): Promise<[string]>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        setStep(_step: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+    };
+    presaleBuyers(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+    setV1Buyers(addrs: string[], overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    exit(ids: BigNumberish[], overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    devFund(overrides?: CallOverrides): Promise<string>;
+    gkronos(overrides?: CallOverrides): Promise<string>;
+    v1Buyers(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+    emergencyWithdraw(token: string, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    renounceOwnership(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    enter(ids: BigNumberish[], overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    owner(overrides?: CallOverrides): Promise<string>;
+    isOwner(overrides?: CallOverrides): Promise<boolean>;
+    price(overrides?: CallOverrides): Promise<BigNumber>;
+    mint(id: BigNumberish, overrides?: PayableOverrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    gstabledao(overrides?: CallOverrides): Promise<string>;
+    step(overrides?: CallOverrides): Promise<BigNumber>;
+    gsupernova(overrides?: CallOverrides): Promise<string>;
+    transferOwnership(newOwner: string, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    setStep(_step: BigNumberish, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    callStatic: {
+        presaleBuyers(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+        setV1Buyers(addrs: string[], overrides?: CallOverrides): Promise<void>;
+        exit(ids: BigNumberish[], overrides?: CallOverrides): Promise<void>;
+        devFund(overrides?: CallOverrides): Promise<string>;
+        gkronos(overrides?: CallOverrides): Promise<string>;
+        v1Buyers(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+        emergencyWithdraw(token: string, overrides?: CallOverrides): Promise<void>;
+        renounceOwnership(overrides?: CallOverrides): Promise<void>;
+        enter(ids: BigNumberish[], overrides?: CallOverrides): Promise<void>;
+        owner(overrides?: CallOverrides): Promise<string>;
+        isOwner(overrides?: CallOverrides): Promise<boolean>;
+        price(overrides?: CallOverrides): Promise<BigNumber>;
+        mint(id: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        gstabledao(overrides?: CallOverrides): Promise<string>;
+        step(overrides?: CallOverrides): Promise<BigNumber>;
+        gsupernova(overrides?: CallOverrides): Promise<string>;
+        transferOwnership(newOwner: string, overrides?: CallOverrides): Promise<void>;
+        setStep(_step: BigNumberish, overrides?: CallOverrides): Promise<void>;
+    };
+    filters: {
+        "OwnershipTransferred(address,address)"(previousOwner?: string | null, newOwner?: string | null): OwnershipTransferredEventFilter;
+        OwnershipTransferred(previousOwner?: string | null, newOwner?: string | null): OwnershipTransferredEventFilter;
+    };
+    estimateGas: {
+        presaleBuyers(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+        setV1Buyers(addrs: string[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        exit(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        devFund(overrides?: CallOverrides): Promise<BigNumber>;
+        gkronos(overrides?: CallOverrides): Promise<BigNumber>;
+        v1Buyers(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+        emergencyWithdraw(token: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        enter(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        owner(overrides?: CallOverrides): Promise<BigNumber>;
+        isOwner(overrides?: CallOverrides): Promise<BigNumber>;
+        price(overrides?: CallOverrides): Promise<BigNumber>;
+        mint(id: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        gstabledao(overrides?: CallOverrides): Promise<BigNumber>;
+        step(overrides?: CallOverrides): Promise<BigNumber>;
+        gsupernova(overrides?: CallOverrides): Promise<BigNumber>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        setStep(_step: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+    };
+    populateTransaction: {
+        presaleBuyers(arg0: string, overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        setV1Buyers(addrs: string[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        exit(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        devFund(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        gkronos(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        v1Buyers(arg0: string, overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        emergencyWithdraw(token: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        enter(ids: BigNumberish[], overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        isOwner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        price(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        mint(id: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        gstabledao(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        step(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        gsupernova(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        setStep(_step: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+    };
+}
+//# sourceMappingURL=VVIPMinterV2.d.ts.map

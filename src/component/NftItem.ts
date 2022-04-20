@@ -24,8 +24,9 @@ export default class NftItem extends DomNode {
             this.krnoDisplay = el(".krno"),
             el("button", "BUY", {
                 click: () => new Confirm("구매 확인", "1,000클레이로 구매합니다.", "구매", async () => {
-                    await VVIPMinterContract.mint(this.id);
-                    ViewUtil.waitTransactionAndRefresh();
+                    if (await VVIPMinterContract.mint(this.id) === true) {
+                        ViewUtil.waitTransactionAndRefresh();
+                    }
                 }),
             }),
         );

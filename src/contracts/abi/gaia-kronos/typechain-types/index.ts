@@ -84,6 +84,7 @@ export type { MockKSLP } from "./MockKSLP";
 export type { MocksKRNO } from "./MocksKRNO";
 export type { MockStaking } from "./MockStaking";
 export type { VVIPMinter } from "./VVIPMinter";
+export type { VVIPMinterV2 } from "./VVIPMinterV2";
 
 export { GaiaBuyBackFund__factory } from "./factories/GaiaBuyBackFund__factory";
 export { GaiaNFT__factory } from "./factories/GaiaNFT__factory";
@@ -168,3 +169,4 @@ export { MockKSLP__factory } from "./factories/MockKSLP__factory";
 export { MocksKRNO__factory } from "./factories/MocksKRNO__factory";
 export { MockStaking__factory } from "./factories/MockStaking__factory";
 export { VVIPMinter__factory } from "./factories/VVIPMinter__factory";
+export { VVIPMinterV2__factory } from "./factories/VVIPMinterV2__factory";

@@ -76,7 +76,7 @@ export interface KIP7 extends BaseContract {
     once: OnEvent<this>;
     removeListener: OnEvent<this>;
     functions: {
-        supportsInterface(interfaceId: BytesLike, overrides?: CallOverrides): Promise<[boolean]>;
+        supportsInterface(arg0: BytesLike, overrides?: CallOverrides): Promise<[boolean]>;
         approve(spender: string, value: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<ContractTransaction>;
@@ -87,13 +87,13 @@ export interface KIP7 extends BaseContract {
         "safeTransfer(address,uint256)"(recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<ContractTransaction>;
-        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, arg2: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<ContractTransaction>;
         "safeTransferFrom(address,address,uint256)"(sender: string, recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<ContractTransaction>;
-        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, arg3: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<ContractTransaction>;
         balanceOf(account: string, overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -102,7 +102,7 @@ export interface KIP7 extends BaseContract {
         }): Promise<ContractTransaction>;
         allowance(owner: string, spender: string, overrides?: CallOverrides): Promise<[BigNumber]>;
     };
-    supportsInterface(interfaceId: BytesLike, overrides?: CallOverrides): Promise<boolean>;
+    supportsInterface(arg0: BytesLike, overrides?: CallOverrides): Promise<boolean>;
     approve(spender: string, value: BigNumberish, overrides?: Overrides & {
         from?: string | Promise<string>;
     }): Promise<ContractTransaction>;
@@ -113,13 +113,13 @@ export interface KIP7 extends BaseContract {
     "safeTransfer(address,uint256)"(recipient: string, amount: BigNumberish, overrides?: Overrides & {
         from?: string | Promise<string>;
     }): Promise<ContractTransaction>;
-    "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+    "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, arg2: BytesLike, overrides?: Overrides & {
         from?: string | Promise<string>;
     }): Promise<ContractTransaction>;
     "safeTransferFrom(address,address,uint256)"(sender: string, recipient: string, amount: BigNumberish, overrides?: Overrides & {
         from?: string | Promise<string>;
     }): Promise<ContractTransaction>;
-    "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+    "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, arg3: BytesLike, overrides?: Overrides & {
         from?: string | Promise<string>;
     }): Promise<ContractTransaction>;
     balanceOf(account: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -128,14 +128,14 @@ export interface KIP7 extends BaseContract {
     }): Promise<ContractTransaction>;
     allowance(owner: string, spender: string, overrides?: CallOverrides): Promise<BigNumber>;
     callStatic: {
-        supportsInterface(interfaceId: BytesLike, overrides?: CallOverrides): Promise<boolean>;
+        supportsInterface(arg0: BytesLike, overrides?: CallOverrides): Promise<boolean>;
         approve(spender: string, value: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
         totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
         transferFrom(sender: string, recipient: string, amount: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
         "safeTransfer(address,uint256)"(recipient: string, amount: BigNumberish, overrides?: CallOverrides): Promise<void>;
-        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, data: BytesLike, overrides?: CallOverrides): Promise<void>;
+        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, arg2: BytesLike, overrides?: CallOverrides): Promise<void>;
         "safeTransferFrom(address,address,uint256)"(sender: string, recipient: string, amount: BigNumberish, overrides?: CallOverrides): Promise<void>;
-        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, data: BytesLike, overrides?: CallOverrides): Promise<void>;
+        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, arg3: BytesLike, overrides?: CallOverrides): Promise<void>;
         balanceOf(account: string, overrides?: CallOverrides): Promise<BigNumber>;
         transfer(recipient: string, amount: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
         allowance(owner: string, spender: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -147,7 +147,7 @@ export interface KIP7 extends BaseContract {
         Approval(owner?: string | null, spender?: string | null, value?: null): ApprovalEventFilter;
     };
     estimateGas: {
-        supportsInterface(interfaceId: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
+        supportsInterface(arg0: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
         approve(spender: string, value: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<BigNumber>;
@@ -158,13 +158,13 @@ export interface KIP7 extends BaseContract {
         "safeTransfer(address,uint256)"(recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<BigNumber>;
-        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, arg2: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<BigNumber>;
         "safeTransferFrom(address,address,uint256)"(sender: string, recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<BigNumber>;
-        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, arg3: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<BigNumber>;
         balanceOf(account: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -174,7 +174,7 @@ export interface KIP7 extends BaseContract {
         allowance(owner: string, spender: string, overrides?: CallOverrides): Promise<BigNumber>;
     };
     populateTransaction: {
-        supportsInterface(interfaceId: BytesLike, overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        supportsInterface(arg0: BytesLike, overrides?: CallOverrides): Promise<PopulatedTransaction>;
         approve(spender: string, value: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<PopulatedTransaction>;
@@ -185,13 +185,13 @@ export interface KIP7 extends BaseContract {
         "safeTransfer(address,uint256)"(recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<PopulatedTransaction>;
-        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransfer(address,uint256,bytes)"(recipient: string, amount: BigNumberish, arg2: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<PopulatedTransaction>;
         "safeTransferFrom(address,address,uint256)"(sender: string, recipient: string, amount: BigNumberish, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<PopulatedTransaction>;
-        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, data: BytesLike, overrides?: Overrides & {
+        "safeTransferFrom(address,address,uint256,bytes)"(sender: string, recipient: string, amount: BigNumberish, arg3: BytesLike, overrides?: Overrides & {
             from?: string | Promise<string>;
         }): Promise<PopulatedTransaction>;
         balanceOf(account: string, overrides?: CallOverrides): Promise<PopulatedTransaction>;
